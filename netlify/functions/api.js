@@ -25,7 +25,7 @@ router.get('/hello', function (req, res) {
 });
 
 router.get('/whoami', function (req, res) {
-    res.json({ 'ipaddress': req.ip, 'language': req.get('Accept-Language'), 
+    res.json({ 'ipaddress': req.get('X-Forwarded-For'), 'language': req.get('Accept-Language'), 
                 'software': req.get('User-Agent')})
 });
   
